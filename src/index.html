@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="app.min.js"></script>
+</head>
+<body ng-app="Poller">
+  <div ng-controller="MainPollCtrl as mpc">
+    <div ng-controller="CreatePollCtrl as cpc">
+      <create-new-poll-btn toggle-value="cpc.creatingNewPoll"></create-new-poll-btn>
+      <add-poll-options-btn 
+          ng-if="cpc.creatingNewPoll" click-handler="cpc.addPollOption()">
+       </add-poll-options-btn>
+      <div ng-if="cpc.creatingNewPoll">
+        <input type="text" ng-model="cpc.poll.title" placeholder="Poll Title"/>
+         <div id="poll-options">
+            <poll-options-input 
+              ng-repeat="option in cpc.poll.options"
+              ng-model="cpc.poll.options[$index].option">
+            </poll-options-input>
+            <button ng-click=cpc.addPoll()>Create</button>
+            <button ng-click="cpc.resetPoll()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <section id="polls-list">
+      <ul>
+        <polls-list-item ng-repeat="poll in polls"></polls-list-item>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
