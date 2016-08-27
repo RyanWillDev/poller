@@ -36,3 +36,10 @@ function pollsListItem() {
     templateUrl: 'templates/pollsListItem.html'
   };
 }
+
+function pollResultsDetails() {
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/pollResultsDetails.html'
+  }
+}
