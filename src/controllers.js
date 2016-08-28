@@ -77,12 +77,16 @@ function PollResultsCtrl($scope) {
   var vm = this;
   vm.test = 'test';
   vm.selectedPoll = '';
+  vm.addVote = addVote;
 
   $scope.$on('pollSelected', showPollDetails);
 
   function showPollDetails(event, i) {
     var MainCtrl = $scope;
-    vm.selectedPoll =  $scope.polls[i];
-    console.log(vm.selectedPoll);
+    vm.selectedPoll = MainCtrl.polls[i];
+  }
+
+  function addVote(index) {
+    vm.selectedPoll.options[index].votes++;
   }
 }

@@ -39,7 +39,11 @@ function pollsListItem() {
 
 function pollResultsDetails() {
   return {
+    scope: {
+      selectedPoll: '<',
+      clickHandler: '='
+    },
     restrict: 'E',
     templateUrl: 'templates/pollResultsDetails.html'
-  }
+  };
 }

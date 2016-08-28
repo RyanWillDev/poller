@@ -1,4 +1,7 @@
 <div>
-  <span>{{option}}</span>
-  <span>{{votes}}</span>
+  <span>{{selectedPoll.title}}</span>
+  <div ng-repeat="option in selectedPoll.options">
+    <span>{{option.option}}</span>
+    <span>{{option.votes}}</span><button ng-click="clickHandler($index)">Vote</button>
+  </div>
 </div>

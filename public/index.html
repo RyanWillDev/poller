@@ -31,7 +31,9 @@
       </ul>
     </section>
     <section id="poll-results" ng-controller="PollResultsCtrl as prc">
-      {{prc.selectedPoll}}
+      <poll-results-details 
+      selected-poll="prc.selectedPoll" click-handler="prc.addVote">
+      </poll-results-details>
     </section>
   </div>
 </body>
