@@ -41,8 +41,14 @@ function CreatePollCtrl($scope) {
     // was being added to the polls array
     // when calling reset it would reset the poll array
     var newPoll = Object.assign({}, vm.poll);
+    newPoll.options = vm.poll.options.filter(filterEmpty);
     MainCtrl.polls.push(newPoll);
     vm.resetPoll();
+
+    // Pull empty options out of array
+    function filterEmpty(opt) {
+      return opt.option !== '';
+    }
   }
 
   function resetPoll() {
