@@ -41,7 +41,7 @@ function pollResultsDetails() {
   return {
     scope: {
       selectedPoll: '<',
-      clickHandler: '='
+      clickHandler: '<'
     },
     restrict: 'E',
     templateUrl: 'templates/pollResultsDetails.html'

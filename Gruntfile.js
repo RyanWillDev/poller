@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        mangle: true,
+        mangle: false,
         sourceMap: true
       },
       compress: {
@@ -48,10 +48,10 @@ module.exports = function(grunt) {
         dest: 'public/index.html'
       }
     },
-    clean: ['./src/temp', './public/app.js'],
+    clean: ['./src/temp'],
     watch: {
       scripts: {
-        files: ['src/*.js', 'src/**/*.html'],
+        files: ['src/**/*.js', 'src/**/*.html'],
         tasks: ['default'],
         options: {
           spawn: false

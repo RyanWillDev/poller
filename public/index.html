@@ -5,8 +5,11 @@
   <title>Poller</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="app.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body ng-app="Poller">
+  <h1>Poller</h1>
+  <p>Create polls and tally results</p>
   <div ng-controller="MainPollCtrl as mpc">
     <div ng-controller="CreatePollCtrl as cpc">
       <create-new-poll-btn toggle-value="cpc.creatingNewPoll"></create-new-poll-btn>

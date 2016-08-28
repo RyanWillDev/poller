@@ -14,4 +14,7 @@ var Poller = angular.module('Poller', ['templates-main'])
 .directive('pollOptionsInput', pollOptionsInput)
 .directive('addPollOptionsBtn', addPollOptionsBtn)
 .directive('pollsListItem', pollsListItem)
-.directive('pollResultsDetails', pollResultsDetails);
+.directive('pollResultsDetails', pollResultsDetails)
+
+// Filters
+.filter('mostVotes', mostVotes);
