@@ -1,8 +1,8 @@
 <div>
-  <span>{{selectedPoll.title}}</span>
+  <h2>{{selectedPoll.title}}</h2>
   <div ng-repeat="option in selectedPoll.options">
     <span>{{option.option}}</span>
-    <span>{{option.votes}}</span><button ng-click="clickHandler($index)">Vote</button>
+    <span class="selected-poll-count">{{option.votes}}</span><button class="btn" ng-click="clickHandler($index)">Vote</button>
   </div>
-  {{ selectedPoll.options | mostVotes | getValue:'votes' }}
+  <h2 ng-if="selectedPoll">Winner: {{ selectedPoll.options | mostVotes | getValue:'option' }}</h2>
 </div>

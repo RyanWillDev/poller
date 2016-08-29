@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'extends';
+
+html {
+  background: $body-color;
+  background-repeat: no-repeat; 
+  font-family: $font-stack;
+  height: 100%;
+}
+
+.title {
+  font-size: 3.75em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.sub-heading {
+  font-size: 1.5em;
+  margin-top: 0;
+  text-align: center;
+}
+
+.btn {
+  @extend .button;
+}
+
+.poll-input {
+  @extend .input;
+}
+
+.poll-list {
+  list-style: none;
+
+  & h2 {
+    margin-bottom: 0;
+  }
+}
+
+.poll-title {
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+.selected-poll-count {
+  display: inline-block;
+  margin-right: 8px;
+}

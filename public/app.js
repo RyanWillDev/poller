@@ -189,13 +189,13 @@ function getValue() {
 angular.module('templates-main', []).run(['$templateCache', function($templateCache) {
   "use strict";
   $templateCache.put("templates/addPollOptionsBtn.html",
-    "<button ng-click=clickHandler()>add option</button>");
+    "<button class=btn ng-click=clickHandler()>add option</button>");
   $templateCache.put("templates/createNewPollBtn.html",
-    "<button ng-click=\"toggleValue = !toggleValue\">Create a new poll</button>");
+    "<button class=btn ng-click=\"toggleValue = !toggleValue\">Create a new poll</button>");
   $templateCache.put("templates/pollOptionsInput.html",
-    "<input placeholder=\"Add a Poll Option\" ng-model=\"cpc.poll.options[$index].option\">");
+    "<input class=poll-input placeholder=\"Add a Poll Option\" ng-model=\"cpc.poll.options[$index].option\">");
   $templateCache.put("templates/pollResultsDetails.html",
-    "<div><span>{{selectedPoll.title}}</span><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span>{{option.votes}}</span><button ng-click=clickHandler($index)>Vote</button></div>{{ selectedPoll.options | mostVotes | getValue:'votes' }}</div>");
+    "<div><h2>{{selectedPoll.title}}</h2><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span class=selected-poll-count>{{option.votes}}</span><button class=btn ng-click=clickHandler($index)>Vote</button></div><h2 ng-if=selectedPoll>Winner: {{ selectedPoll.options | mostVotes | getValue:'option' }}</h2></div>");
   $templateCache.put("templates/pollsListItem.html",
-    "<li><h3>{{poll.title}}</h3></li>");
+    "<li><span class=poll-title>{{poll.title}}</span><button class=btn>See Details</button></li>");
 }]);

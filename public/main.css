@@ -1,3 +1,60 @@
+.button, .btn {
+  appearance: none;
+  border: 2px solid #f7fefe;
+  border-radius: 5px;
+  color: #f7fefe;
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 4px 6px;
+  text-transform: capitalize;
+  outline: none; }
+  .button:hover, .btn:hover {
+    background-color: #f7fefe;
+    cursor: pointer;
+    color: black; }
+  .button:active, .btn:active {
+    position: relative;
+    top: 3px;
+    left: 2px;
+    box-shadow: 0px 0px; }
 
+.input, .poll-input {
+  border: 2px solid #f7fefe;
+  border-radius: 5px;
+  font-size: 0.75em;
+  margin: 5px 8px 5px 0;
+  padding: 5px; }
+  .input:focus, .poll-input:focus {
+    border-color: #5D5E60;
+    outline: none; }
+
+html {
+  background: #c9c9c9;
+  background-repeat: no-repeat;
+  font-family: "Vesper Libre", sans-serif;
+  height: 100%; }
+
+.title {
+  font-size: 3.75em;
+  margin-bottom: 8px;
+  text-align: center; }
+
+.sub-heading {
+  font-size: 1.5em;
+  margin-top: 0;
+  text-align: center; }
+
+.poll-list {
+  list-style: none; }
+  .poll-list h2 {
+    margin-bottom: 0; }
+
+.poll-title {
+  font-size: 1.5em;
+  margin-right: 8px; }
+
+.selected-poll-count {
+  display: inline-block;
+  margin-right: 8px; }
 
 /*# sourceMappingURL=main.css.map */
