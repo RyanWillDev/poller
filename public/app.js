@@ -186,7 +186,7 @@ angular.module('templates-main', []).run(['$templateCache', function($templateCa
   $templateCache.put("templates/pollOptionsInput.html",
     "<input placeholder=\"Add a Poll Option\" ng-model=\"cpc.poll.options[$index].option\">");
   $templateCache.put("templates/pollResultsDetails.html",
-    "<div><span>{{selectedPoll.title}}</span><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span>{{option.votes}}</span><button ng-click=clickHandler($index)>Vote</button></div></div>");
+    "<div><span>{{selectedPoll.title}}</span><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span>{{option.votes}}</span><button ng-click=clickHandler($index)>Vote</button></div>{{selectedPoll.options | mostVotes}}</div>");
   $templateCache.put("templates/pollsListItem.html",
     "<li><h3>{{poll.title}}</h3></li>");
 }]);
