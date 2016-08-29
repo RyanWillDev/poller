@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       },
       compress: {
         files: {
-          'public/app.min.js': 'public/app.js'
+          'public/app.min.js': 'public/app.js',
         }
       }
     },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         dest: 'public/index.html'
       }
     },
-    clean: ['./src/temp'],
+    clean: ['./src/temp', './public/app.js'],
     watch: {
       scripts: {
         files: ['src/**/*.js', 'src/**/*.html'],

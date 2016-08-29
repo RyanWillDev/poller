@@ -1,0 +1,37 @@
+.button {
+  appearance: none;
+  border: 2px solid $button-border;
+  border-radius: 5px;
+  color: $button-text-color;
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 4px 6px;
+  text-transform: capitalize;
+  outline: none;
+
+  &:hover {
+    background-color: $button-hover-bg;
+    cursor: pointer;
+    color: black;
+  }
+
+  &:active{
+    position: relative;
+    top:3px;
+    left:2px;
+    box-shadow: 0px 0px;
+  }
+}
+
+.input {
+  border: 2px solid $button-border;
+  border-radius: 5px;
+  font-size: 0.75em;
+  margin: 5px 8px 5px 0;
+  padding: 5px;
+
+  &:focus {
+    border-color: #5D5E60;
+    outline: none;
+  }
+}
