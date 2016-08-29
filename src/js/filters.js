@@ -12,3 +12,11 @@ function mostVotes() {
     }
   };
 }
+
+function getValue() {
+  return function(obj, key) {
+    if (obj) {
+      return obj[key];
+    }
+  };
+}

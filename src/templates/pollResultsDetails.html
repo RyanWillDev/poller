@@ -4,5 +4,5 @@
     <span>{{option.option}}</span>
     <span>{{option.votes}}</span><button ng-click="clickHandler($index)">Vote</button>
   </div>
-  {{selectedPoll.options | mostVotes}}
+  {{ selectedPoll.options | mostVotes | getValue:'votes' }}
 </div>

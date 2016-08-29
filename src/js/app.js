@@ -17,4 +17,5 @@ var Poller = angular.module('Poller', ['templates-main'])
 .directive('pollResultsDetails', pollResultsDetails)
 
 // Filters
-.filter('mostVotes', mostVotes);
+.filter('mostVotes', mostVotes)
+.filter('getValue', getValue);

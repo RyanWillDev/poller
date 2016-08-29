@@ -17,7 +17,8 @@ var Poller = angular.module('Poller', ['templates-main'])
 .directive('pollResultsDetails', pollResultsDetails)
 
 // Filters
-.filter('mostVotes', mostVotes);
+.filter('mostVotes', mostVotes)
+.filter('getValue', getValue);
 
 /*******************
 Controllers
@@ -177,6 +178,14 @@ function mostVotes() {
   };
 }
 
+function getValue() {
+  return function(obj, key) {
+    if (obj) {
+      return obj[key];
+    }
+  };
+}
+
 angular.module('templates-main', []).run(['$templateCache', function($templateCache) {
   "use strict";
   $templateCache.put("templates/addPollOptionsBtn.html",
@@ -186,7 +195,7 @@ angular.module('templates-main', []).run(['$templateCache', function($templateCa
   $templateCache.put("templates/pollOptionsInput.html",
     "<input placeholder=\"Add a Poll Option\" ng-model=\"cpc.poll.options[$index].option\">");
   $templateCache.put("templates/pollResultsDetails.html",
-    "<div><span>{{selectedPoll.title}}</span><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span>{{option.votes}}</span><button ng-click=clickHandler($index)>Vote</button></div>{{selectedPoll.options | mostVotes}}</div>");
+    "<div><span>{{selectedPoll.title}}</span><div ng-repeat=\"option in selectedPoll.options\"><span>{{option.option}}</span> <span>{{option.votes}}</span><button ng-click=clickHandler($index)>Vote</button></div>{{ selectedPoll.options | mostVotes | getValue:'votes' }}</div>");
   $templateCache.put("templates/pollsListItem.html",
     "<li><h3>{{poll.title}}</h3></li>");
 }]);
